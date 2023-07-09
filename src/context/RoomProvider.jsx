@@ -32,13 +32,22 @@ const RoomProvider = (props) => {
     })
     return tempItem
   }
+
+  const getRoom=(slug)=>{
+    let tempRooms=[...resortData.rooms]
+    
+    const room = tempRooms.find(room=>room.slug===slug)
+    return room
+  }
+
+
   useEffect(()=>{
     mountComponent()
   },[])
   
 
   return (
-    <RoomContext.Provider value={{...resortData}}>
+    <RoomContext.Provider value={{...resortData, getRoom:getRoom}}>
         {props.children}
     </RoomContext.Provider>
   )
