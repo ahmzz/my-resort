@@ -53,4 +53,6 @@ const RoomProvider = (props) => {
   )
 }
 
-export  {RoomProvider, RoomContext}
+const RoomConsumer=RoomContext.Consumer
+
+export  {RoomProvider, RoomContext,RoomConsumer}
